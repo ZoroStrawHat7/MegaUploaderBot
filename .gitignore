@@ -1,0 +1,11 @@
+.env
+*.session
+*.session-journal
+mega.ini
+cipher.key
+/data/
+/NexaBots/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
