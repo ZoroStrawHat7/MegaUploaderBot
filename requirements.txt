@@ -1,0 +1,10 @@
+kurigram==2.2.27
+Tgcrypto
+filetype
+aiofiles
+python-dotenv
+aiohttp[speedups]
+pycryptodome
+psutil
+humans-formatter
+uvloop; sys_platform != "win32"
