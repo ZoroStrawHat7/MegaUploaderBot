@@ -1,3 +1,4 @@
+
 import os
 import sys
 from pathlib import Path
@@ -29,7 +30,7 @@ def main() -> None:
     data_dir.mkdir(parents=True, exist_ok=True)
 
     cfg_path = data_dir / "mega.ini"
-        config_text = (
+    config_text = (
         "[Login]\n"
         f"Username = {os.environ['MEGA_EMAIL']}\n"
         f"Password = {os.environ['MEGA_PASSWORD']}\n\n"
@@ -40,8 +41,7 @@ def main() -> None:
     cfg_path.write_text(config_text, encoding="utf-8")
     os.chmod(cfg_path, 0o600)
 
-    # Keep large temporary media downloads on the container's temporary disk,
-    # not the persistent /data volume.
+    # Keep large temporary media downloads on the container's temporary disk.
     download_dir = Path(os.getenv("DOWNLOAD_LOCATION", "/tmp/mega-downloads"))
     download_dir.mkdir(parents=True, exist_ok=True)
 
