@@ -29,13 +29,13 @@ def main() -> None:
     data_dir.mkdir(parents=True, exist_ok=True)
 
     cfg_path = data_dir / "mega.ini"
-    config_text = (
-        "[Login]\\n"
-        f"Username = {os.environ['MEGA_EMAIL']}\\n"
-        f"Password = {os.environ['MEGA_PASSWORD']}\\n\\n"
-        "[Network]\\n"
-        "SpeedLimit = 0\\n"
-        "ParallelTransfers = 4\\n"
+        config_text = (
+        "[Login]\n"
+        f"Username = {os.environ['MEGA_EMAIL']}\n"
+        f"Password = {os.environ['MEGA_PASSWORD']}\n\n"
+        "[Network]\n"
+        "SpeedLimit = 0\n"
+        "ParallelTransfers = 4\n"
     )
     cfg_path.write_text(config_text, encoding="utf-8")
     os.chmod(cfg_path, 0o600)
